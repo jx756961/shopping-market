@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "录单",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": " "
+    }
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 60000
+  },
+  "cloud": true,
+  "usingComponents": {
+    "van-dialog": "/static/vant-weapp/dialog/index",
+    "van-popup": "/static/vant-weapp/popup/index",
+    "van-switch": "/static/vant-weapp/switch/index",
+    "van-area": "/static/vant-weapp/area/index",
+    "van-toast": "/static/vant-weapp/toast/index",
+    "van-swipe-cell": "/static/vant-weapp/swipe-cell/index",
+    "van-checkbox": "/static/vant-weapp/checkbox/index",
+    "van-checkbox-group": "/static/vant-weapp/checkbox-group/index",
+    "van-action-sheet": "/static/vant-weapp/action-sheet/index",
+    "van-field": "/static/vant-weapp/field/index",
+    "van-steps": "/static/vant-weapp/steps/index",
+    "van-picker": "/static/vant-weapp/picker/index",
+    "van-button": "/static/vant-weapp/button/index",
+    "van-icon": "/static/vant-weapp/icon/index",
+    "van-radio": "/static/vant-weapp/radio/index",
+    "van-radio-group": "/static/vant-weapp/radio-group/index",
+    "van-cell": "/static/vant-weapp/cell/index",
+    "van-cell-group": "/static/vant-weapp/cell-group/index"
+  }
+}

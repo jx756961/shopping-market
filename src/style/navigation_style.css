@@ -1,0 +1,66 @@
+/*填充页面*/
+.navigationFill{
+  width: 100%;
+}
+.navigationStyle{
+  width: 100%;
+  background-color: #262B33;
+  text-align: center;
+  box-sizing: content-box;
+  height: 32px;          /*写成px*/
+  padding-bottom: 8px;   /*写成px*/
+  padding-top: 26px;     /*防止闪屏*/   /*写成px*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9997;
+  font-size:18px;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:bold;
+  color:#fff;
+}
+.navigationStyle>div{
+  height: 32px;
+  line-height: 32px;
+}
+.navigationStyle .navigation_left{
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+.bar_goback{
+  width: 10px;
+  height: 16px;
+  padding: 7px 15px 7px 20px;
+}
+.bar_gohome{
+  width: 18px;
+  height: 16px;
+  padding: 7px 15px 7px 20px;
+}
+.home-manager{
+  width: 17px;
+  height: 17px;
+  padding: 7px 15px 7px 20px;
+}
+.home-message{
+  width: 18px;
+  height: 19px;
+  padding: 7px 15px 7px 20px;
+}
+
+.navigationStyle .navigation_center{
+  font-size:18px;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:bold;
+  color:#FFFFFF;
+}
+.record-style{
+  background-color: #fff;
+}
+.record-style .navigation_center{
+  color: #2D3137;
+}
