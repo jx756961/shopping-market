@@ -1,13 +1,16 @@
+
 {
   "pages": [
-    "pages/index/main"
+    "pages/index/main",
+    "pages/client/classification/main"
   ],
   "window": {
-    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "录单",
     "navigationBarTextStyle": "white",
-    "navigationStyle": "custom"
+    "navigationStyle": "custom",
+    "backgroundColor":"#fff",
+    "backgroundTextStyle":"dark"
   },
   "permission": {
     "scope.userLocation": {
@@ -17,6 +20,9 @@
   "networkTimeout": {
     "request": 10000,
     "downloadFile": 60000
+  },
+  "useExtendedLib": {
+    "weui": true
   },
   "cloud": true,
   "usingComponents": {
@@ -37,6 +43,9 @@
     "van-radio": "/static/vant-weapp/radio/index",
     "van-radio-group": "/static/vant-weapp/radio-group/index",
     "van-cell": "/static/vant-weapp/cell/index",
-    "van-cell-group": "/static/vant-weapp/cell-group/index"
+    "van-cell-group": "/static/vant-weapp/cell-group/index",
+    "pull-down-refresh": "/static/pullDownRefresh/pullDownRefresh",
+    "mp-vtabs": "/static/vtabs/index",
+    "mp-vtabs-content": "/static/vtabs-content/index"
   }
 }

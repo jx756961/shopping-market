@@ -64,6 +64,12 @@
 					"pathName": "pages/record/enter_license/main",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/client/classification/main",
+					"pathName": "pages/client/classification/main",
+					"scene": null
 				}
 			]
 		}

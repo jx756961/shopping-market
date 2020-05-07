@@ -1,29 +1,29 @@
 
 <script>
 import store from './store'
-  export default {
-  onLaunch(option){
-    const userInfo = wx.getStorageSync('userInfo');  //同步获取数据
-    if(userInfo){
-      store.commit('changeUser', JSON.parse(userInfo));
-    }else{
-      wx.setStorage({    //防止报错
+export default {
+  onLaunch(option) {
+    const userInfo = wx.getStorageSync('userInfo') // 同步获取数据
+    if (userInfo) {
+      store.commit('changeUser', JSON.parse(userInfo))
+    } else {
+      wx.setStorage({ // 防止报错
         key: 'userInfo',
         data: JSON.stringify({}),
-        success: function(res){}
+        success: function(res) {}
       })
     }
-    console.log('wx.getMenuButtonBoundingClientRect().bottom+10',wx.getMenuButtonBoundingClientRect().bottom+10)
-    store.commit('changeNavigationH', wx.getMenuButtonBoundingClientRect().bottom+8);  //加10px的padding-bottom
+    console.log('wx.getMenuButtonBoundingClientRect().bottom+10', wx.getMenuButtonBoundingClientRect().bottom + 10)
+    store.commit('changeNavigationH', wx.getMenuButtonBoundingClientRect().bottom + 8) // 加10px的padding-bottom
   },
-  onHide(){  //页面隐藏
-    wx.setStorage({    //页面隐藏，保存用户信息到缓存
+  onHide() { // 页面隐藏
+    wx.setStorage({ // 页面隐藏，保存用户信息到缓存
       key: 'userInfo',
       data: JSON.stringify(store.state.userInfo),
-      success: function(res){}
-    });
+      success: function(res) {}
+    })
   },
-  created () {
+  created() {
     // 调用API从本地缓存中获取数据
     /*
      * 平台 api 差异的处理方式:  api 方法统一挂载到 mpvue 名称空间, 平台判断通过 mpvuePlatform 特征字符串
@@ -35,7 +35,7 @@ import store from './store'
 
     let logs
     if (mpvuePlatform === 'my') {
-      logs = mpvue.getStorageSync({key: 'logs'}).data || []
+      logs = mpvue.getStorageSync({ key: 'logs' }).data || []
       logs.unshift(Date.now())
       mpvue.setStorageSync({
         key: 'logs',
@@ -48,7 +48,7 @@ import store from './store'
     }
   },
 
-  log () {
+  log() {
     console.log(`log at:${Date.now()}`)
   }
 }
