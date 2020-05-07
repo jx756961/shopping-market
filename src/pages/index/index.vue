@@ -6,7 +6,7 @@
         <div class="search-wrap">
           <div class="address">
             <!--<img src="https://www.sudichina.com/v1.0/cars/img-location.png" alt="">-->
-            <img  class="location" src="https://img.sudichina.com/public/app_goods_imgs/location_point.png" alt="">
+            <img class="location" src="https://img.sudichina.com/public/app_goods_imgs/location_point.png" alt="">
             <span>分通科技</span>
             <img class="arrow" src="https://www.sudichina.com/v1.0/cars/img-arrow-to-bottom.png" alt="">
           </div>
@@ -29,6 +29,36 @@
             <!--<img :src="item.imgUrl" @click="see_banner(item.href)">-->
           </swiper-item>
         </swiper>
+        <div class="product-content">
+          <div class="introduce">
+            <div>蘑菇屯鲜生</div>
+            <div>最快5分钟达</div>
+            <div>每日消费88免配送费</div>
+          </div>
+          <div class="grid-list">
+            <van-grid :border="false">
+              <van-grid-item
+                icon="https://img-blog.csdnimg.cn/20200507205514379.png"
+                text="超市"
+                link-type="navigateTo"
+                url="/pages/dashboard/index"
+                icon-class="icon-style"
+              />
+              <van-grid-item
+                icon="https://img-blog.csdnimg.cn/20200507205514359.png"
+                text="水果"
+                @click="natigateTo"
+              />
+              <van-grid-item icon-class="icon-style" icon="https://img-blog.csdnimg.cn/20200507205514311.png" text="蔬菜" />
+              <van-grid-item icon-class="icon-style" icon="https://img-blog.csdnimg.cn/20200507205514352.png" text="百货" />
+            </van-grid>
+          </div>
+          <div class="flash-sale">
+            <div class="title">
+              限时抢购
+            </div>
+          </div>
+        </div>
         <div class="global-btn-v global-car-btn-canLogin canNext" @click="navigate('../client/classification/main')">
           market index
         </div>
@@ -152,6 +182,9 @@ export default {
         console.log('关闭下拉')
         this.changeRefreshed(true)
       }, 2000)
+    },
+    natigateTo() {
+
     }
   },
   onLoad() {
@@ -170,7 +203,6 @@ export default {
       }
     }
   }
-
 }
 </script>
 
