@@ -5,14 +5,14 @@
       <mp-vtabs
         :vtabs="vtabs"
         :active-tab="activeTab"
-        @change="onChange"
-        @tabclick="setTabs"
         :animation="true"
         tab-line-color="#81c1af"
         tab-active-text-color="#81c1af"
+        @change="onChange"
+        @tabclick="setTabs"
       >
-        <div class="item-tabs" v-for="(item, index) in vtabs"  :key="index" wx:key="index">
-          <mp-vtabs-content  :tab-index="index">
+        <div v-for="(item, index) in vtabs" :key="index" class="item-tabs" wx:key="index">
+          <mp-vtabs-content :tab-index="index">
             <view class="vtabs-content-item">我是第{{ index + 1 }}项： {{ item.title }}</view>
           </mp-vtabs-content>
         </div>
@@ -22,18 +22,16 @@
 </template>
 
 <script>
+import navH from '@/mixins/navH'
+
 export default {// 分类组件
   name: 'Index',
   components: {},
+  mixins: [navH],
   data() {
     return {
       vtabs: [],
       activeTab: 0
-    }
-  },
-  computed: {
-    navigationH() {
-      return `calc(100vh - ${this.$store.state.axiosHeader.navigationH}px)`
     }
   },
   created() {

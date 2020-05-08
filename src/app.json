@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/client/classification/main"
+    "pages/client/classification/main",
+    "pages/client/shopping_cart/main",
+    "pages/client/user_manager/main"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",

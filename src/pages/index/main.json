@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "van-grid": "/static/vant-weapp/grid/index",
-    "van-grid-item": "/static/vant-weapp/grid-item/index"
+    "van-grid-item": "/static/vant-weapp/grid-item/index",
+    "van-sticky": "/static/vant-weapp/sticky/index"
   }
 }

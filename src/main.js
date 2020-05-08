@@ -188,6 +188,7 @@ Vue.prototype.$systemTop = function(navH, margin) {
   return parseFloat(navHei)
 }
 
+
 Vue.config.productionTip = false
 App.mpType = 'app'
 

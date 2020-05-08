@@ -36,22 +36,24 @@
             <div>每日消费88免配送费</div>
           </div>
           <div class="grid-list">
-            <van-grid :border="false">
-              <van-grid-item
-                icon="https://img-blog.csdnimg.cn/20200507205514379.png"
-                text="超市"
-                link-type="navigateTo"
-                url="/pages/dashboard/index"
-                icon-class="icon-style"
-              />
-              <van-grid-item
-                icon="https://img-blog.csdnimg.cn/20200507205514359.png"
-                text="水果"
-                @click="natigateTo"
-              />
-              <van-grid-item icon-class="icon-style" icon="https://img-blog.csdnimg.cn/20200507205514311.png" text="蔬菜" />
-              <van-grid-item icon-class="icon-style" icon="https://img-blog.csdnimg.cn/20200507205514352.png" text="百货" />
-            </van-grid>
+            <van-sticky class="list--list" :offset-top="topH">
+              <van-grid :border="false">
+                <van-grid-item
+                  icon="https://img-blog.csdnimg.cn/20200507205514379.png"
+                  text="超市"
+                  link-type="navigateTo"
+                  url="/pages/dashboard/index"
+                  icon-class="icon-style"
+                />
+                <van-grid-item
+                  icon="https://img-blog.csdnimg.cn/20200507205514359.png"
+                  text="水果"
+                  @click="natigateTo"
+                />
+                <van-grid-item icon-class="icon-style" icon="https://img-blog.csdnimg.cn/20200507205514311.png" text="蔬菜" />
+                <van-grid-item icon-class="icon-style" icon="https://img-blog.csdnimg.cn/20200507205514352.png" text="百货" />
+              </van-grid>
+            </van-sticky>
           </div>
           <div class="flash-sale">
             <div class="title">
@@ -64,19 +66,22 @@
         </div>
       </div>
     </pull-down-refresh>
+    <bottom_navigation ref="bottom_bar" :type="1" />
   </div>
 </template>
 
 <script>
-import no_cancel_dialog from '@/components/common/no_cancel_dialog'
+  import bottom_navigation from '@/components/common/bottom_navigation'
+import navH from '@/mixins/navH'
 import { reLaunchClear } from '../../utils/utils'
 import { inputDataCan } from '@/utils/utils'
-import pull_down from '../../mixins/pull_down'
+import pull_down from '@/mixins/pull_down'
 
 export default {
   components: {
+    bottom_navigation
   },
-  mixins: [pull_down],
+  mixins: [pull_down, navH],
   data() {
     return {
       motto: '',
