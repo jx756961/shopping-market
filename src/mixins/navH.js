@@ -3,7 +3,7 @@ export default {
     navigationH() {
       return `calc(100vh - ${this.$store.state.axiosHeader.navigationH}px)`
     },
-    topH(){
+    topH() {
       return this.$store.state.axiosHeader.navigationH
     }
   }

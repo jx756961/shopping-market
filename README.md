@@ -89,3 +89,5 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 #### 首页内容
 1. 首页顶部滚动banner图,理念介绍,订单指引。
 2. 
+#### 管理后台
+1. 上传商品信息页,必传商品主图,商品标题,商品价格,至少一张商品详情图

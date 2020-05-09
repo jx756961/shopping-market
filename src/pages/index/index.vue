@@ -71,7 +71,7 @@
 </template>
 
 <script>
-  import bottom_navigation from '@/components/common/bottom_navigation'
+import bottom_navigation from '@/components/common/bottom_navigation'
 import navH from '@/mixins/navH'
 import { reLaunchClear } from '../../utils/utils'
 import { inputDataCan } from '@/utils/utils'

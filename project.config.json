@@ -38,37 +38,17 @@
 			"current": -1,
 			"list": [
 				{
-					"id": -1,
-					"name": "/record/record_index",
-					"pathName": "pages/record/record_index/main",
+					"id": 0,
+					"name": "business",
+					"pathName": "pages/business/admin_index/main",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "car_information",
-					"pathName": "pages/record/car_information/main",
+					"name": "pages/business/admin_class/main",
+					"pathName": "pages/business/admin_class/main",
 					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "record_list",
-					"pathName": "pages/record/record_list/main",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "enter_license",
-					"pathName": "pages/record/enter_license/main",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/client/classification/main",
-					"pathName": "pages/client/classification/main",
 					"scene": null
 				}
 			]
