@@ -2,6 +2,8 @@
   <div class="select_popup1">
     <div class="own-car">
       <div :class="{'active':1==aIndex || currentVe===1}" @click="setVeNum(1,'京A64383')">全部商品</div>
+      <div :class="{'active':1==aIndex || currentVe===1}" @click="setVeNum(2,'京A64383')">上架</div>
+      <div :class="{'active':1==aIndex || currentVe===1}" @click="setVeNum(3,'京A64383')">未上架</div>
     </div>
     <div class="other-car">
       <div :class="{'active':4==aIndex || currentVe===4}" @click="setVeNum(4,'京B83933')">京B83933</div>
