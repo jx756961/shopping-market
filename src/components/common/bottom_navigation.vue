@@ -1,48 +1,35 @@
 <template>
   <div>
-    <div class="bottom_navigation" :class="'active'+type">
-      <div class="item" @click="handle(1)">
-        <img v-if="type===1" src="https://img.sudichina.com/public/app_car_imgs/bottom_navigation1_2.png">
-        <img v-else src="https://img.sudichina.com/public/app_car_imgs/bottom_navigation1_1.png">
-        <span>首页</span>
-      </div>
-      <div class="item" @click="handle(2)">
-        <img src="https://img.sudichina.com/public/app_car_imgs/bottom_navigation3_2.png">
-      </div>
-      <div class="item" @click="handle(3)">
-        <img v-if="type===3" src="https://img.sudichina.com/public/app_car_imgs/bottom_navigation5_2.png">
-        <img v-else src="https://img.sudichina.com/public/app_car_imgs/bottom_navigation5_1.png">
-        <span>我的</span>
-      </div>
+    <div class="bottom_navigation">
+      <van-tabbar
+        :active="active"
+        active-color="#81c1af"
+        inactive-color="#ccc"
+        @change="onChange"
+      >
+        <van-tabbar-item icon="wap-home">首页</van-tabbar-item>
+        <van-tabbar-item icon="shopping-cart" info="5">购物车</van-tabbar-item>
+        <van-tabbar-item icon="manager">我的</van-tabbar-item>
+      </van-tabbar>
     </div>
-    <van-dialog id="van-dialog" />
-    <van-toast id="van-toast" />
   </div>
 </template>
 
 <script>
 // 车主的底部导航
-import store from '@/store'
 export default {
-  props: ['type'], // 第几个导航处于活动状态
+  props: {
+  },
+  data() {
+    return {
+      active: 0
+    }
+  },
   methods: {
-    navigateNext(url) { // 跳转页面
-      if (this.type === 1) {
-        wx.navigateTo({ url: url })
-      } else {
-        wx.redirectTo({ url: url })
-      }
-    },
-    handle(type) { // 点击底部导航
-      if (this.type === type) { // 无法重复调至当前页
-        return false
-      } else if (type === 1) { // 首页
-        wx.reLaunch({ url: this.$store.state.axiosHeader.toIndex })
-      } else if (type === 2) { // 购物车
-        this.navigate('/pages/client/shopping_cart/main')
-      } else if (type === 3) { // 我的
-        this.navigate('/pages/client/user_manager/main')
-      }
+    onChange(e) {
+      console.log(e.mp)
+      this.active = e.mp.detail
+      this.$emit('setActiveTabBar', this.active)
     }
   }
 }

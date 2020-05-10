@@ -63,6 +63,26 @@
         </div>
       </div>
     </div>
+    <div class="order-manager">
+      <div class="title">
+        <img src="https://www.sudichina.com/v1.0/cars/img-user-my-wallet.png" alt="">
+        <span>设置中心</span>
+      </div>
+      <div class="manager">
+        <div>
+          <div class="number">2 <span class="small"></span> </div>
+          <div class="tips">banner</div>
+        </div>
+        <div>
+          <div class="number">4 <span class="small"></span> </div>
+          <div class="tips">分类图标</div>
+        </div>
+        <div>
+          <div class="number">0 <span class="small"></span> </div>
+          <div class="tips">活动管理</div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

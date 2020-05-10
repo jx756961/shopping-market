@@ -2,8 +2,6 @@
   "pages": [
     "pages/index/main",
     "pages/client/classification/main",
-    "pages/client/shopping_cart/main",
-    "pages/client/user_manager/main",
     "pages/business/admin_index/main",
     "pages/business/admin_class/main"
   ],
@@ -47,6 +45,8 @@
     "van-radio-group": "/static/vant-weapp/radio-group/index",
     "van-cell": "/static/vant-weapp/cell/index",
     "van-cell-group": "/static/vant-weapp/cell-group/index",
+    "van-tabbar": "/static/vant-weapp/tabbar/index",
+    "van-tabbar-item": "/static/vant-weapp/tabbar-item/index",
     "pull-down-refresh": "/static/pullDownRefresh/pullDownRefresh",
     "mp-vtabs": "/static/vtabs/index",
     "mp-vtabs-content": "/static/vtabs-content/index"
