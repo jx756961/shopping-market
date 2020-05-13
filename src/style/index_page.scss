@@ -4,8 +4,11 @@ div{
 }
 
 .search-wrap{
+  position: fixed;
+  z-index: 9999;
   height: 40px;
   width: 100%;
+
   background-color: $themeBg;
   padding: 5px 10px 3px 20px;
   box-sizing: border-box;

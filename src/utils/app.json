@@ -15,7 +15,7 @@
     "backgroundColor":"#fff",
     "backgroundTextStyle":"dark"
   },
-  "tabBar": {
+  "tabBar":  {
     "list": [
       {
         "pagePath": "pages/index/main",
