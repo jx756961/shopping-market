@@ -50,6 +50,12 @@
 					"pathName": "pages/business/admin_class/main",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/client/shopping_cart/main",
+					"pathName": "pages/client/shopping_cart/main",
+					"scene": null
 				}
 			]
 		}

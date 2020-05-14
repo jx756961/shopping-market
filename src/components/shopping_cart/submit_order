@@ -1,0 +1,27 @@
+<template>
+
+</template>
+
+<script>
+
+export default {
+  name: 'submit_order',
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+    onClickButton() {
+      this.$emit('submitOrder')
+    }
+  }
+}
+</script>
+<style scoped>
+  .submit-order{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+</style>

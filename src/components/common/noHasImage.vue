@@ -1,10 +1,11 @@
 <template>
   <div>
-    <div class="no-has">
+    <div class="no-has" :style="{'margin-top':marginTop +'px'}">
       <img :src="imgUrl" alt="">
-      <div>
+      <div v-if="smallFont">
         {{ tips }}
       </div>
+      <div class="large">{{ tips }}</div>
     </div>
   </div>
 </template>
@@ -18,7 +19,14 @@ export default {
       type: String,
       default: '暂无数据'
     },
-
+    smallFont: {
+      type: Boolean,
+      default: true
+    },
+    marginTop: {
+      type: Number,
+      default: 100
+    },
     imgUrl: {
       type: String,
       default: 'https://www.sudichina.com/v1.0/cars/no_details.png'
@@ -41,7 +49,7 @@ export default {
     font-family:PingFangSC-Regular,PingFang SC;
     font-weight:400;
     color: #666666;
-    margin:100px auto ;
+    margin:100px auto 10px;
     text-align: center;
     width: 220px;
 
@@ -49,5 +57,9 @@ export default {
   .no-has img{
     width: 120px;
     height: 120px;
+  }
+
+  .large{
+    font-size: 16px;
   }
 </style>
