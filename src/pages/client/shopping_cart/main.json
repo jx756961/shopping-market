@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "van-submit-bar": "../../../../static/vant-weapp/submit-bar/index"
+    "van-submit-bar": "../../../../static/vant-weapp/submit-bar/index",
+    "van-checkbox": "../../../../static/vant-weapp/checkbox/index",
+    "van-checkbox-group": "../../../../static/vant-weapp/checkbox-group/index"
   }
 }
