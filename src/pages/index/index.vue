@@ -3,7 +3,7 @@
     <navigation_style title-text="首页" />
     <pull-down-refresh :refreshing="refreshing" :refreshed="refreshed" @refresh="getGoods(1)">
       <div>
-        <div class="search-wrap" :style="{ top: topH +'px'}">
+        <div class="search-wrap" :style="{ top: topH +'px',position: refreshed?'fixed':''}">
           <div class="address">
             <!--<img src="https://www.sudichina.com/v1.0/cars/img-location.png" alt="">-->
             <img class="location" src="https://img.sudichina.com/public/app_goods_imgs/location_point.png" alt="">
@@ -15,7 +15,7 @@
             <span>搜索</span>
           </div>
         </div>
-        <div class="swiper-wrap">
+        <div class="swiper-wrap" :style="{'margin-top':refreshed? '38px' :''}">
           <swiper
             :current="swiperCurrent"
             indicator-dots="true"

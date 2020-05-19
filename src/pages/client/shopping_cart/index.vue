@@ -12,7 +12,19 @@
         <div class="go-shopping" @click="goShopping">去逛逛</div>
       </div>
       <div v-else class="car-list">
-        <div class="title">全选栏</div>
+        <div class="title">
+<!--          <van-checkbox-->
+<!--            :value="checkedAll"-->
+<!--            checked-color="#81c1af"-->
+<!--            @change="onChangeAll"-->
+<!--          >-->
+<!--            -->
+<!--          </van-checkbox>-->
+          <div class="header-goods">
+            <img class="img" src="https://img-blog.csdnimg.cn/20200507205514379.png" alt="">
+            <span style="padding-left: 10px;line-height: 40px;font-size: 13px"> 蘑菇屯</span>
+          </div>
+        </div>
         <div class="item">
           <van-checkbox-group :value="result" @change="onChange">
             <van-checkbox
@@ -28,10 +40,10 @@
                   <div class="on-time">送达时间</div>
                   <div class="price">10 <span>/斤</span> </div>
                 </div>
-                <div class="add-goods">
-                  <span class="button">-</span>
-                  <span class="count">10</span>
-                  <span class="button">+</span>
+                <div class="add-goods" @click.stop>
+                  <span class="button" @click.stop="subGoodsToCar">-</span>
+                  <span class="count">{{ count }}</span>
+                  <span class="button" @click.stop="addGoodsToCar">+</span>
                 </div>
               </div>
             </van-checkbox>
@@ -75,36 +87,28 @@
             </van-checkbox>
           </van-checkbox-group>
         </div>
-
       </div>
     </div>
-    <div class="submit-order">
-      <van-submit-bar
-        :price="3050"
-        button-text="提交订单"
-        button-class="button-status"
-        button-type="primary"
-        :tip="true"
-        @submit="onClickButton"
-      >
-        <van-tag type="primary">标签</van-tag>
-        <!--        <view slot="tip">您的收货地址不支持同城送, <text>修改地址</text></view>-->
-      </van-submit-bar>
-    </div>
+    <submit_bar :checkAll="checkedAll"/>
+
   </div>
 </template>
 <script>
 import navigation_style from '@/components/common/navigation_style'
 import noHasImage from '@/components/common/noHasImage'
+import submit_bar from '@/components/goods_class/submit_bar'
 // import submit_order from '@/components/shopping_cart/submit_order'
 import { wxToast } from '../../../utils/utils'
 export default {// 购物车组件
   name: 'ShoppingCart',
-  components: { navigation_style, noHasImage },
+  components: { navigation_style, noHasImage, submit_bar },
   data() {
     return {
       cartList: [1],
-      result: []
+      result: [],
+      count: 11,
+      checkedAll: false
+
     }
   },
   created() {
@@ -123,20 +127,29 @@ export default {// 购物车组件
         text: '5'
       })
     },
-    onClickButton() {
-      wxToast('提交订单')
+    onChangeAll(e) {
+      this.checkedAll = e.mp.detail
     },
     onChange(e) {
       this.result = e.mp.detail
+    },
+    subGoodsToCar() {
+      if (this.count > 0) {
+        this.count--
+      }
+    },
+    addGoodsToCar() {
+      this.count++
+    },
+    setCheckAll(val){
+      this.checkedAll = val
     }
 
   },
   onload() {
 
-  },
-  options: {
-    styleIsolation: 'isolated'
   }
+
 }
 </script>
 
@@ -192,7 +205,7 @@ export default {// 购物车组件
         height: 40px;
         line-height: 40px;
         padding: 0 10px;
-        border-bottom: 1px #8a8a8a solid;
+        border-bottom: 1px rgba(138,138,138,0.2) solid;
         box-sizing: border-box;
       }
       .item{
@@ -241,23 +254,25 @@ export default {// 购物车组件
           }
           .add-goods{
             position: absolute;
-            width: 80px;
-            height: 24px;
+            width: 120px;
+            height: 30px;
             border: 1px solid rgba(204,204,204,0.2);
-            line-height: 24px;
+            line-height: 30px;
             border-radius: 5px;
             color: #666;
+
             font-size: 13px;
             bottom: 15px;
             right: 10px;
             .button{
               display: inline-block;
-              width: 20px;
+              width: 35px;
               text-align: center;
+              font-size: 16px;
             }
             .count{
               display: inline-block;
-              width: 37px;
+              width: 47px;
               text-align: center;
               border-left: 1px solid rgba(204,204,204,0.2);
               border-right: 1px solid rgba(204,204,204,0.2);
@@ -283,11 +298,15 @@ export default {// 购物车组件
         border:1px solid #cccccc;
       }
     }
+    .header-goods{
+      line-height: 40px;
+      .img{
+        width: 20px;
+        height: 20px;
+        transform: translateY(5px);
+      }
+    }
   }
 
 </style>
-<style scoped>
- .wrap .van-button--primary {
-    background: #81c1af;
-  }
-</style>
+
